@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>EntryValidator</id>
-    <version>1.0.1</version>
+    <version>1.0.0</version>
     <title>Entry Validator</title>
     <authors>Ahmed Aglan</authors>
     <owners>MpsEgypt.com</owners>
