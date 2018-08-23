@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Xamarin forms validation app</Description>
+    <Authors>MpsEgypt.com</Authors>
+    <Summary>Add validation behavior to Xamarin.Forms easly</Summary>
+    <PackageProjectUrl>https://github.com/AhmedAglan/ValidationApp</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageId>ValidationApp</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <AssemblyName>EntryValidator</AssemblyName>
+    <RootNamespace>EntryValidator</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+  </ItemGroup>
+
+</Project>
