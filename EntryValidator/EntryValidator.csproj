@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EntryValidatorSample\**" />
+    <EmbeddedResource Remove="EntryValidatorSample\**" />
+    <None Remove="EntryValidatorSample\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
 

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EntryValidatorSample"
+             xmlns:behaviors="clr-namespace:EntryValidator.Behaviors;assembly=EntryValidator"
+             x:Class="EntryValidatorSample.MainPage">
+
+  <StackLayout>
+    <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+      <Label Text="Entry Validator Sample" FontSize="Large" />
+    </StackLayout>
+    <Grid HeightRequest="500">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <ScrollView Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+        <StackLayout VerticalOptions="CenterAndExpand">
+
+          <Label Text="Name (Required):"/>
+          <Entry Keyboard="Text" >
+            <Entry.Behaviors>
+              <behaviors:EntryValidatorBehavior x:Name="VldtrName" BackgroundColor="Orange" />
+            </Entry.Behaviors>
+          </Entry>
+
+          <Label Text="Address (Required, 20 Char):"/>
+          <Entry Keyboard="Text" >
+            <Entry.Behaviors>
+              <behaviors:EntryValidatorBehavior x:Name="VldtrAddress" Length="20"/>
+            </Entry.Behaviors>
+          </Entry>
+
+          <Label Text="Email (Required, Email):"/>
+          <Entry Keyboard="Text" >
+            <Entry.Behaviors>
+              <behaviors:EntryValidatorBehavior x:Name="VldtrEmail" IsEmail="True"/>
+            </Entry.Behaviors>
+          </Entry>
+
+          <Label Text="Phone (Required, Number):"/>
+          <Entry Keyboard="Telephone" >
+            <Entry.Behaviors>
+              <behaviors:EntryValidatorBehavior x:Name="VldtrPhone" IsNumber="True" />
+            </Entry.Behaviors>
+          </Entry>
+
+
+          <Label Text="Weight (Required, Range 1-250):"/>
+          <Entry Keyboard="Numeric"  >
+            <Entry.Behaviors>
+              <behaviors:EntryValidatorBehavior x:Name="VldtrWeight" IsRange="True" RangeMin="1" RangeMax="250"/>
+            </Entry.Behaviors>
+          </Entry>
+
+          <Label Text="RegEx ([A-Z][a-z][1-9]):"/>
+          <Entry >
+            <Entry.Behaviors>
+              <behaviors:EntryValidatorBehavior x:Name="VldtrRegExp" RegEx="([A-Z][a-z][1-9])"/>
+            </Entry.Behaviors>
+          </Entry>
+
+
+          <Button Text="Validate" Clicked="btnValidate_Clicked"/>
+        </StackLayout>
+      </ScrollView>
+
+    </Grid>
+
+
+  </StackLayout>
+
+</ContentPage>
